@@ -131,6 +131,9 @@ web の入力項目などに順番に貼り付けることが容易にできま�
 
 ## Release Notes
 
+### 0.0.2
+
+moveCursorNextLine関数をVS Codeの内部コマンドで書き換え
 ### 0.0.1
 
 最初のリリース

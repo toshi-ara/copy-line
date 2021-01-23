@@ -21,16 +21,16 @@ export class CopyLine {
   };
 
   // move cursor to next line
-  // https://github.com/microsoft/vscode/issues/111#issuecomment-157998910
+  // https://code.visualstudio.com/api/references/commands
   private moveCursorNextLine = (editor: vscode.TextEditor) => {
-    const position = editor.selection.active;
-    const currentLineNumber = position.line;
-    const maxLineNumber = editor.document.lineCount;
-
-    const newLineNumber = Math.min(currentLineNumber + 1, maxLineNumber - 1);
-    const newPosition = position.with(newLineNumber, 0);
-    const newSelection = new vscode.Selection(newPosition, newPosition);
-    editor.selection = newSelection;
+    vscode.commands.executeCommand<void>("cursorMove", {
+      to: "wrappedLineStart",
+      by: "line"
+    });
+    return vscode.commands.executeCommand<void>("cursorMove", {
+      to: "down",
+      by: "line"
+    });
   };
 
   // public function
