@@ -14,8 +14,8 @@ export function matchStr(text: string): string {
   const regexp3 = /^(.+?)\s+(#*|[○×]*)$/;
 
   const match = text.replace(regexp1, "$2")
-  .replace(regexp2, "$1")
-  .replace(regexp3, "$1");
+                    .replace(regexp2, "$1")
+                    .replace(regexp3, "$1");
   return match as string;
 };
 
@@ -50,23 +50,3 @@ export function copyLine() {
     moveCursorNextLine(editor);
   }
 };
-
-// export class CopyLine {
-//   // public function
-//   public run = () => {
-//     // Get the active text editor
-//     const editor = vscode.window.activeTextEditor;
-//     if (editor) {
-//       const str = getLineText(editor);
-//       const result = matchStr(str);
-
-//       if (result !== "") {
-//         vscode.env.clipboard.writeText(result);
-//       };
-
-//       moveCursorNextLine(editor);
-//     }
-//   };
-// }
-
-
