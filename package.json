@@ -40,14 +40,14 @@
         "test": "node ./out/test/runTest.js"
     },
     "devDependencies": {
-        "@types/glob": "^8.1.0",
+        "@types/glob": "^7.2.0",
         "@types/mocha": "^10.0.3",
         "@types/node": "^20.8.9",
         "@types/vscode": "^1.52.0",
         "@typescript-eslint/eslint-plugin": "^6.9.0",
         "@typescript-eslint/parser": "^6.9.0",
         "eslint": "^8.52.0",
-        "glob": "^10.3.10",
+        "glob": "^7.2.3",
         "mocha": "^10.2.0",
         "typescript": "^5.2.2",
         "vscode-test": "^1.4.1"
