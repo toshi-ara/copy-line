@@ -1,4 +1,4 @@
-import * as vscode from 'vscode';
+import * as vscode from "vscode";
 
 export class CopyLine {
   // functions
@@ -13,16 +13,15 @@ export class CopyLine {
     const regexp2 = /^(.+?)\s*$/;
     const regexp3 = /^(.+?)\s+(#*|[○×]*)$/;
 
-    const match1 = text.replace(regexp1, "$2");
-    const match2 = match1.replace(regexp2, "$1");
-    const match3 = match2.replace(regexp3, "$1");
-
-    return match3 as string;
+    const match = text.replace(regexp1, "$2")
+                      .replace(regexp2, "$1")
+                      .replace(regexp3, "$1");
+    return match as string;
   };
 
   // move cursor to next line
   // https://code.visualstudio.com/api/references/commands
-  private moveCursorNextLine = (editor: vscode.TextEditor) => {
+  private moveCursorNextLine = (_editor: vscode.TextEditor) => {
     vscode.commands.executeCommand<void>("cursorMove", {
       to: "wrappedLineStart",
       by: "line"
@@ -41,7 +40,7 @@ export class CopyLine {
       const str = this.getLineText(editor);
       const result = this.matchStr(str);
 
-      if (result !== '') {
+      if (result !== "") {
         vscode.env.clipboard.writeText(result);
       };
 
