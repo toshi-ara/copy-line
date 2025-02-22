@@ -1,5 +1,10 @@
 # copy-line README
 
+このプログラムのメンテナンスは終了しました
+
+[CopyLine-cs](https://github.com/toshi-ara/CopyLine-cs)
+を使用して下さい
+
 ## 概要
 
 * カーソルのある行の内容を正規表現で切り出してから
